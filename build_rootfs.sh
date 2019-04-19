@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# -------------------------------------------------------------------------------------------------
+# build and copy buildroot
+# -------------------------------------------------------------------------------------------------
+echo '*********************************************************************************************'
+echo '************************        building root filesystem           **************************'
+echo '*********************************************************************************************'
+if [ $build_rootfs -eq 1 ]
+then
+	if ! [ -d "./buildroot-at91" ]
+	then
+		git clone https://github.com/linux4sam/buildroot-at91.git
+		cd buildroot-at91
+		make atmel_sama5d27_som1_ek_mmc_dev_defconfig
+		cd ..
+
+		# copy patches
+		# TODO...
+	fi
+	
+	cd buildroot-at91
+	make -j8
+	cd ..
+fi
+if [ -d "./buildroot-at91" ] 
+	then
+	echo 'Copy '${rfs_resF}' to '${result_p}
+	cp ./buildroot-at91/output/images/${rfs_resF} ${result_p}
+else
+	echo -e "${COLOR_ERR}buildroot-at91 is not existed. please enable build_rootfs.${COLOR_RST}"
+fi
+# -------------------------------------------------------------------------------------------------
+
