@@ -11,8 +11,9 @@ then
 	if ! [ -d "./buildroot-at91" ]
 	then
 		git clone https://github.com/linux4sam/buildroot-at91.git
+		git clone https://github.com/linux4sam/buildroot-external-microchip.git
 		cd buildroot-at91
-		make atmel_sama5d27_som1_ek_mmc_dev_defconfig
+		R2_EXTERNAL=../buildroot-external-microchip/ make sama5d27_som1_ek_demo_defconfig
 		cd ..
 
 		# copy patches
