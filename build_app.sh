@@ -15,7 +15,7 @@ then
 	cd app
 	if ! [ -d "./helloworld" ] 
 	then
-	git clone git://github.com/s887432/helloworld.git
+	git clone https://github.com/s887432/helloworld.git
 	fi
 	cd helloworld
 	make
