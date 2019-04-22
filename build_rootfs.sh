@@ -13,7 +13,7 @@ then
 		git clone https://github.com/linux4sam/buildroot-at91.git
 		git clone https://github.com/linux4sam/buildroot-external-microchip.git
 		cd buildroot-at91
-		BR2_EXTERNAL=../buildroot-external-microchip/ make sama5d27_som1_ek_demo_defconfig
+		BR2_EXTERNAL=../buildroot-external-microchip/ make sama5d27_som1_ek_headless_defconfig
 		cd ..
 
 		# copy patches
