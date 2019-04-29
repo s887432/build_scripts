@@ -91,6 +91,7 @@ then
 	sudo cp ${result_p}/app/* ${result_p}/${mnt2}/opt/
 
 	if [ patch_wilcdriver -eq 1 ]
+	then
 		sudo mkdir -p ${result_p}/${mnt2}/lib/firmware/mchp
 		sudo cp wilc_firmware/* ${result_p}/${mnt2}/lib/firmware/mchp/
 		sudo cp wilc_patch/wpa_supplicant.conf ${result_p}/${mnt2}/etc/
