@@ -87,7 +87,7 @@ then
 	
 	#----------- copy applications ---------------------------
 	echo ""
-	echo "step 8: copy applications to root fs
+	echo "step 8: copy applications to root fs"
 	sudo cp ${result_p}/app/* ${result_p}/{mnt2}/opt/
 
 	#----------- umount and finish -------------
