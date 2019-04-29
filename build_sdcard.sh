@@ -90,7 +90,7 @@ then
 	echo "step 8: copy applications to root fs"
 	sudo cp ${result_p}/app/* ${result_p}/${mnt2}/opt/
 
-	if [ patch_wilcdriver -eq 1 ]
+	if [ $patch_wilcdriver -eq 1 ]
 	then
 		sudo mkdir -p ${result_p}/${mnt2}/lib/firmware/mchp
 		sudo cp wilc_firmware/* ${result_p}/${mnt2}/lib/firmware/mchp/
