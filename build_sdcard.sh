@@ -90,6 +90,14 @@ then
 	echo "step 8: copy applications to root fs"
 	sudo cp ${result_p}/app/* ${result_p}/${mnt2}/opt/
 
+	if [ patch_wilcdriver -eq 1 ]
+		sudo mkdir -p ${result_p}/${mnt2}/lib/firmware/mchp
+		sudo cp wilc_firmware/* ${result_p}/${mnt2}/lib/firmware/mchp/
+		sudo cp wilc_patch/wpa_supplicant.conf ${result_p}/${mnt2}/etc/
+		sudo cp wilc_patch/start_wlan.sh ${result_p}/${mnt2}/root/
+		sudo cp wilc_patch/S90wilc ${result_p}/${mnt2}/etc/init.d/
+	fi
+
 	#----------- umount and finish -------------
 	echo ""	
 	echo "step9: unmounting partititions............"

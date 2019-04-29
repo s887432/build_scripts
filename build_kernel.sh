@@ -17,7 +17,10 @@ then
 		make sama5_defconfig
 		cd ..
 		# copy patches
-		# TODO...
+		if [ patch_wilcdriver -eq 1 ]
+			rm -rf linux-at91/drivers/staging/wilc1000/*
+			cp wilc_driver/wilc/* linux-1t91/drivers/staging/wilc1000
+		fi
 	fi
 
 	cd linux-at91
