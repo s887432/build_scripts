@@ -82,7 +82,7 @@ then
 	echo ""	
 	echo "step7: copy built rootfs for emmcmntp2................"	
 	echo copy minimal root file system......
-	sudo tar -C ${mnt2} -xvf ${rfs_resF}
+	sudo tar -C ${mnt2} -xf ${rfs_resF}
 	cd ..
 	
 	#----------- copy applications ---------------------------
