@@ -18,6 +18,7 @@ then
 		cd ..
 		# copy patches
 		if [ patch_wilcdriver -eq 1 ]
+		then
 			rm -rf linux-at91/drivers/staging/wilc1000/*
 			cp wilc_driver/wilc/* linux-1t91/drivers/staging/wilc1000
 		fi
